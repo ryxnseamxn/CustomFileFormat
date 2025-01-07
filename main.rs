@@ -1,7 +1,7 @@
-use std::io::Cursor;
 use image::ImageReader;
 
-let img = ImageReader::open("gavarni.jpg")?.decode()?;
-
-img.save("empty.jpg")?;
-
+fn main() -> Result<(), Box<dyn std::error::Error>> {
+    let img = ImageReader::open("gavarni.jpg")?.decode()?;
+    img.save("empty.jpg")?;
+    Ok(())
+}
